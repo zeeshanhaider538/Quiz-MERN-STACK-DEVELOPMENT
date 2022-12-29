@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrom</title>
+</head>
+<body>
+    <div style=" justify-content:center; width:100%;display: flex;margin-top: 40px;">
+        <form style="width: 30%;">
+            <fieldset>
+             <legend>Palindrom:</legend>
+             <label for="fname">Enter the String:</label>
+             <input type="text" id="str" ><br><br>
+             
+             <button type="reset"  onclick="pl()">Get result</button><br><br>
+             <!-- <label> : </label> -->
+             <span id="show"></span>
+            </fieldset>
+            </form>
+            </div>
+            <script>
+                function pl()
+                {
+                    var a = document.getElementById("str").value;
+                    var b="";
+                    for(let i=a.length-1;i>=0;i--)
+                    {
+                        b+=a[i];
+                    }
+                    console.log(b)
+                    if(b==a)
+                    {
+                        document.getElementById("show").innerHTML="It is Plindrome";
+                    }
+                    else
+                    {
+                        document.getElementById("show").innerHTML="It is NOT";
+                    }
+                }
+            </script>
+</body>
+</html>

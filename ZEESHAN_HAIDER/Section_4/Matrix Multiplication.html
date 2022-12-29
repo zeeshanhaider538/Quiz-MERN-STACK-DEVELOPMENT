@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Matrix Multiplication</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style=" justify-content:center; width:100%;display: flex;margin-top: 40px;">
+            <form style="width: 50%;">
+                <fieldset>
+                 <legend>Matrix Multiplication:</legend>
+                 <label for="fname">Enter the Number of Rows in first Matrix  :</label>
+                 <input type="number" id="r1" min=0 oninput="validity.valid ||(value='')"><br><br>
+                 <label for="fname">Enter the Number of Columns in first Matrix  :</label>
+                 <input type="number" id="c1" min=0 oninput="validity.valid ||(value='')"><br><br>
+                 <label for="fname">Enter the Number of Rows in Second Matrix  :</label>
+                 <input type="number" id="r2" min=0 oninput="validity.valid ||(value='')"><br><br>
+                 <label for="fname">Enter the Number of Columns in Second Matrix  :</label>
+                 <input type="number" id="c2" min=0 oninput="validity.valid ||(value='')"><br><br>
+                 
+                 <button type="reset"  onclick="mult()">Get result</button><br><br>
+                 <label> </label>
+                 <span id="show"></span>
+                 <span id="abc"></span>
+                </fieldset>
+                </form>
+                </div>
+
+        <script>
+            function mult()
+            {
+                
+                var r1,c1,r2,c2,arr,arr1,prt=0,cld=0 ,sum=0,q=0;
+                var result=[],row,col;
+                r1=parseInt(document.getElementById("r1").value);
+                c1=parseInt(document.getElementById("c1").value);
+                r2=parseInt(document.getElementById("r2").value);
+                c2=parseInt(document.getElementById("c2").value);
+                if(c1==r2)
+                {
+                arr1=new Array(r1,c1);
+                arr2=new Array(r2,c2);
+                // fill the array first
+                for(var i=0;i<r1;i++)
+                {
+                    arr1[i]=[i];
+                }
+                for(var i=0;i<r1;i++)
+                {
+                
+                    for(let j=0;j<c1;j++)
+                    {
+                        arr1[i][j]=j;
+                    }
+                    document.write(arr1[i] + "<br>") ;
+                }
+                // console.log(arr1);
+                document.write("<hr>")
+                for(let i=0;i<r2;i++)
+                {
+                    arr2[i]=[i];
+                }
+                for(let i=0;i<r2;i++)
+                {
+                
+                    for(let j=0;j<c2;j++)
+                    {
+                        arr2[i][j]=j;
+                    }
+                    document.write(arr2[i] + "<br>") ;
+                }
+                // console.log(arr2);
+                document.write("<hr>")
+
+                function tak()
+                {
+                   
+                    // cresting result 2d array;
+                    row=r1;
+                    col=c2;
+                    
+                    for(let l=0;l<col;l++)
+                        {
+                            result[l]=[];
+                        }
+                    for(let l=0;l<col;l++)
+                    {
+                
+                        for(let p=0;p<row;p++)
+                        {
+                            result[l][p]=[p];
+                        }
+                        document.write(result[l] + "<br>") ;
+                        }
+                }
+                tak();
+                // console.log(row,col);
+                var m = new Array(row);
+                function main()
+                {   
+                    for(let k=0;k<row;k++)
+                    {
+                    // console.log(arr2[0][1] + "\n" +arr1[0][1]);
+                        m[k]= new Array(col)
+                    for(let i=0;i<col;i++)
+                    {
+                        m[k][i]=0;
+                        for(let j=0;j<c1;j++)
+                        {
+                            // sum=sum + (arr1[i][j] * arr2[j][i]);
+                            m[k][i]+=arr1[k][j]*arr2[j][i];
+
+                        }
+                        // console.log(sum)
+                        // result[prt][q]=sum;
+                        // sum=0;
+                        // q++;
+                        
+                        
+                    }
+                }
+                }
+                document.write("After multiplication <br><br>")
+                main();
+                console.log(m);
+                function display()
+                {
+                    for(let l=0;l<col;l++)
+                    {
+                
+                        for(let p=0;p<row;p++)
+                        {
+                            document.write(m[l][p] + ",");
+                            // console.log(m[l][p]);
+                        }
+                        document.write( "<br>") ;
+                        }
+                }
+                display();
+
+            }
+            else
+            {
+                alert("Its not able to multiply");
+            }
+            }
+
+
+        </script>
+    </body>
+</html>

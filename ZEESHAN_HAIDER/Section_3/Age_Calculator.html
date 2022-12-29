@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Age_Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style=" justify-content:center; width:100%;display: flex;margin-top: 40px;">
+            <form style="width: 30%;">
+                <fieldset>
+                 <legend>Age Calculator till 29 dec 2022:</legend>
+                 <label for="fname">Enter the day:</label>
+                 <input type="number" id="day" min=0 oninput="validity.valid ||(value='')"><br><br>
+                 <label for="fname">Enter the Month:</label>
+                 <input type="number" id="month" min=0 oninput="validity.valid ||(value='')"><br><br>
+                 <label for="fname">Enter the year:</label>
+                 <input type="number" id="year" min=0 oninput="validity.valid ||(value='')"><br><br>
+                 
+                 <button type="reset"  onclick="age()">Get result</button><br><br>
+                 <label>Total Days : </label>
+                 <span id="show"></span>
+                </fieldset>
+                </form>
+                </div>
+
+        <script >
+            function age()
+            {
+                var day=Math.abs(Number(document.getElementById("day").value)-29);
+                var month=Math.abs(Number(document.getElementById("month").value) - 12 );
+                var year=Math.abs(Number(document.getElementById("year").value) - 2022)
+
+                var y= 2022-year;
+                var m=Math.abs(12-month);
+                var d=Math.abs(29-days);
+                document.getElementById("show").innerHTML=`${y} years , ${m} months and ${d} days`;
+                
+            }
+        </script>
+    </body>
+</html>

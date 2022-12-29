@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd Sum</title>
+</head>
+<body>
+    <div style=" justify-content:center; width:100%;display: flex;margin-top: 40px;">
+        <form style="width: 30%;">
+            <fieldset>
+             <legend>ODD SUM:</legend>
+             <label for="fname">Enter the Number > 5 digits:</label>
+             <input type="text" id="num" ><br><br>
+             
+             <button type="reset"  onclick="result()">Get result</button><br><br>
+             <label>Number is : </label>
+             <span id="show"></span>
+            </fieldset>
+            </form>
+            </div>
+            <script>
+                function result()
+                {
+                    var b=0;
+                    var num=document.getElementById("num").value;
+                    if (num.length > 5)
+                    {
+                        for(let i=0;i<num.length;i++)
+                        {
+                            
+                            if(Number(num[i])%2==1)
+                            {
+                                console.log(num[i]);
+                                b=b + Number(num[i]);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        alert("Please Enter the value that conatains more than 5 digits")
+                        b="";
+                        
+                    }
+                    document.getElementById("show").innerHTML=b;
+                }
+            </script>
+    
+</body>
+</html>

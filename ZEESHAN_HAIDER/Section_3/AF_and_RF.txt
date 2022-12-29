@@ -1,0 +1,21 @@
+Arrow funtions:
+    Arrow function you can skip the return keyword.
+    Arrow function can be a single line.
+    Function is stored in a variable without typing keyword function;
+    this is best for callbacks or for map , filter, reduce and forEach
+    Example:
+            const add=((a,b)=> a+b);
+
+
+
+
+Regular Function:
+    Regular functions have always used return keyword to return the value.
+    But regular functions can not be a single line.
+    there should be written keyword Function for declaring a function with it.
+    this is best for object methods.
+    Example:
+            Function add(a,b)
+            {
+                return a+b;
+            }

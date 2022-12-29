@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polygon</title>
+</head>
+<body>
+    <div style=" justify-content:center; width:100%;display: flex;margin-top: 40px;">
+    <form style="width: 30%;">
+        <fieldset>
+         <legend>Polygon Sides:</legend>
+         <label for="fname">Enter the Number of sides of polygon:</label>
+         <input type="number" id="num" ><br><br>
+         
+         <button type="reset"  onclick="result()">Get result</button><br><br>
+         <label>Sum of the Angles is : </label>
+         <span id="show"></span>
+        </fieldset>
+        </form>
+        </div>
+        <script>
+            function result() 
+            {  
+                var num=+document.getElementById("num").value;
+                if(num>2)
+                {
+
+                    
+                    var total=(2*num -4)* 90;
+                    document.getElementById("show").innerHTML=total + " in degree.";
+                }
+                else
+                {
+                    alert("Polygon has minimum 3 side you have to choose 3 or more then 3.")
+                }
+            }
+            </script>
+</body>
+</html>
