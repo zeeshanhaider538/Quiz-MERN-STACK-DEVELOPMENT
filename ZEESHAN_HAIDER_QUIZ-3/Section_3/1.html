@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HighLight</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod perspiciatis sint voluptate expedita <b class="b">ducimus ea iste tenetur</b> vitae, laudantium culpa, <b class="b">error tempore non,</b> recusandae animi fuga nesciunt <b class="b">quae sit numquam!</b></p>
+        <br><br>
+        <h1 id="bold" style="width: 7%;">HighLight</h1>
+        <script >
+            var b =document.getElementsByTagName("b");
+            var bold=document.getElementById("bold");
+
+                bold.addEventListener("mouseover",function(){
+                        for(let i=0;i<b.length;i++)
+                    {
+                        b[i].style.background="yellow";
+                    }
+                   
+                
+
+
+            })
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>intArray</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <form>
+            <fieldset>
+                <legend><h4>Only ADD Int in Array :</h4></legend>
+                <label>Enter the number</label>
+                <input type="number" id="num"><br><br>
+                <button id="a" onclick="add()"> Add</button><br><br>
+                <span id="show"></span>
+            </fieldset>
+        </form>
+        <script >
+            function add()
+            {   
+                var show=document.getElementById("show");
+                var num=document.getElementById("num").value;
+                console.log(num.length)
+                var res=0;
+                if(num.length>5)
+                {
+                    for(let i=0;i<num.length;i++)
+                    {
+                        if(Number(num[i])%2!==0)
+                        {
+                            res+=Number(num[i]);
+                        }
+                    }
+                    console.log(res);
+                    alert("Total sum is "+ res)              }
+                else{
+                    alert("please write more than 5 digits number")
+                }
+
+               
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Carosel</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="p" style="height: 40vh; width: 40%; display: flex;justify-content: space-between; align-items: center;background-image: url(pics/0.jpg);">
+            <button id="pre" > Previous</button>
+            <button id="next">next</button>
+        </div>
+        
+        <script >
+            var a=0;
+            var p=document.getElementById("p");
+            var pre=document.getElementById("pre").addEventListener("click",function()
+            { if (a<4 && a>=0)
+                {p.style.backgroundImage=`url("pics/${a}.jpg")`;
+                a--;
+                console.log(a);
+               
+            }
+            else
+                {
+                    a=3;
+                }
+        });
+            a=0;
+            var pre=document.getElementById("next").addEventListener("click",function()
+            {
+                if (a>=0 && a<=3)
+                {
+                p.style.backgroundImage=`url("pics/${a}.jpg")`;
+                a++;
+                console.log(a);
+            }
+            else
+            {
+                a=0;
+            }
+
+            });
+
+        </script>
+    </body>
+</html>
