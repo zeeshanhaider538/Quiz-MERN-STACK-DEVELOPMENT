@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Api Handling</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body >
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <p id="show"></p>
+        <p id="show1"></p>
+        <p id="show2"></p>
+        <div id="main">
+        <button id="b" onclick="display()">Get Data</button>
+       </div>
+        <script >
+            var res,data;
+            async function getapi1()
+            {   
+                res = await fetch("https://learnwebcode.github.io/json-example/animals-1.json");
+                data=await res.json();
+                console.log(data);
+                
+            }
+            getapi1();
+            var res2,data2;
+            async function getapi2()
+            {   
+                res2 = await fetch("https://learnwebcode.github.io/json-example/animals-2.json");
+                data2=await res2.json();
+                console.log(data2);
+                
+            }
+            getapi2();
+            var res3,data3;
+            async function getapi3()
+            {   
+                res3 = await fetch("https://learnwebcode.github.io/json-example/animals-3.json");
+                data3=await res3.json();
+                console.log(data3);
+                
+            }
+            getapi3();
+            var a=0;
+            var show=document.getElementById("show");
+            function display()
+            {
+                if(a===0)
+                {       
+                    show.innerHTML+="<h1>  1st Api data </h1>"
+
+                    function display1()
+                    {   
+                        
+                        for(let i=0;i<data.length;i++)
+                        {
+                            show.innerHTML+=`obj ${i} have name is : ${data[i].name} <br>`; 
+                            show.innerHTML+=`obj ${i} has species name is : ${data[i].species} <br>`;
+                            show.innerHTML+=`obj ${i} food , dislikes to eat : ${data[i].foods.dislikes} <br>`;
+                            show.innerHTML+=`obj ${i} food , likes to eat : ${data[i].foods.likes} <br><br>`;
+                            show.innerHTML+="<hr/>"  
+                        }
+                    }
+                    display1();
+                }
+                // a++;
+                var show1=document.getElementById("show1");
+              
+            if(a===1)
+                {
+                    show1.innerHTML+="<h1> 2nd Api data </h1>"
+
+                    function display2()
+                    {
+                       
+                    for(let i=0;i<data2.length;i++)
+                    {
+                        show1.innerHTML+=`obj ${i} have name is : ${data2[i].name} <br>`; 
+                        show1.innerHTML+=`obj ${i} has species name is : ${data2[i].species} <br>`;
+                        show1.innerHTML+=`obj ${i} food , dislikes to eat : ${data2[i].foods.dislikes} <br>`;
+                        show1.innerHTML+=`obj ${i} food , likes to eat : ${data2[i].foods.likes} <br><br>`;
+                        show1.innerHTML+="<hr/>"  
+                    }
+                }
+                display2();
+                
+                // a++;
+            }
+                var show2=document.getElementById("show2");
+            if(a===2)
+            {
+                function display3()
+                {   
+                    show2.innerHTML+="<h1> 3rd Api data </h1>"
+                for(let i=0;i<data3.length;i++)
+                {
+                    show2.innerHTML+=`obj ${i} have name is : ${data3[i].name} <br>`; 
+                    show2.innerHTML+=`obj ${i} has species name is : ${data3[i].species} <br>`;
+                    show2.innerHTML+=`obj ${i} food , dislikes to eat : ${data3[i].foods.dislikes} <br>`;
+                    show2.innerHTML+=`obj ${i} food , likes to eat : ${data3[i].foods.likes} <br><br>`;
+                    show2.innerHTML+="<hr/>"  
+                }
+
+            }
+            display3();
+            
+            // a++;
+        }
+            if(a==3)
+            {  
+                var main=document.getElementById("main");
+                main.innerHTML="";
+            }
+            }
+            var b=document.getElementById("b");
+            b.addEventListener("click",function()
+            {
+                a++;
+
+            }
+            );
+                
+            
+              
+            
+        </script>
+    </body>
+</html>
