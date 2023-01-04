@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Json</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <p id="show">
+        </p>
+        
+        <script>
+            async function getapi()
+            {
+                let data=await fetch("https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json")
+                data =await data.json();
+                console.log(data);
+                const obj=data.members;
+                console.log(obj);
+                var show=document.getElementById("show");
+                console.log(obj[0]);
+                for(let i=0;i<obj.length;i++)
+                {
+                    show.innerHTML+=`obj ${i+1} name is : ${obj[i].name} <br>`;
+                    show.innerHTML+=`obj ${i+1} age is : ${obj[i].age} <br>`;
+                    show.innerHTML+=`obj ${i+1} secretIdentity is : ${obj[i].secretIdentity} <br>`;
+                    show.innerHTML+="<hr/>"
+                }
+            }
+            getapi();
+        </script>
+    </body>
+</html>
