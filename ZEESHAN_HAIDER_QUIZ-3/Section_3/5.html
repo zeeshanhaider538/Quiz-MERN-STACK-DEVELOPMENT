@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Age Calculator </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h3 id="show"></h3>
+        
+        <script >
+const currentDate = new Date();
+let birthDate;
+
+function calculateAge(birthDate) {
+    
+  const ageInMilliseconds = currentDate - birthDate;
+  
+  console.log(birthDate);
+  console.log(currentDate)
+
+  const ageInYears = ageInMilliseconds / 1000 / 60 / 60 / 24 / 365.25;
+  const fullYears = Math.floor(ageInYears);
+  const fullMonths = Math.floor((ageInYears - fullYears) * 12);
+  const fullDays = Math.floor((ageInYears - fullYears - fullMonths / 12) * 365.25);
+  return {
+    years: fullYears,
+    months: fullMonths,
+    days: fullDays,
+  };
+}
+
+// Prompt the user for their birth date and store it in a variable
+const birthYear = parseInt(prompt('Enter your birth year:'));
+const birthMonth = parseInt(prompt('Enter your birth month (1-12):'));
+const birthDay = parseInt(prompt('Enter your birth day:'));
+birthDate = new Date(birthYear, birthMonth - 1, birthDay);
+
+// Calculate the age and store it in a variable
+const age = calculateAge(birthDate);
+
+// Output the age in various units
+var show=document.getElementById("show");
+show.innerHTML=(`You are ${age.years} years, ${age.months} months, ${age.days} days.`);
+
+        </script>
+    </body>
+</html>
