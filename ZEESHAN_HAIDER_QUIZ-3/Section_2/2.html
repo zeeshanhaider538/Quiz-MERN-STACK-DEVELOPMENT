@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Class Employee</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <p id="show"></p>
+        
+        <script>
+            class Employee{
+                constructor(name,department,salary)
+                {
+                    this.name = name;
+                    this.department =department;
+                    this.salary=salary;
+                }
+                get getdetails()
+                {
+                    this.name;
+                    this.department;
+                    this.salary;
+                    // console.log(this.name);
+                    // console.log(this.department);
+                    // console.log(this.salary);
+                }
+                set setname(n)
+                {
+                    console.log(this.name=n);
+                    
+                    // console.log(this.salary=s);
+                }
+                set setdpt(d)
+                {
+                    console.log(this.department =d); 
+                }
+                set setslr(s)
+                {
+                    console.log(this.salary =s); 
+                }
+            }
+            var show=document.getElementById("show");
+            const emp1=new Employee("zeeshan","SE","100k");
+            // emp1.set("zeeshan","SE","100k");
+            emp1.getdetails;
+            show.innerHTML+="object 1 <br>"
+            show.innerHTML+=emp1.setname="shanu" + "<br>";
+            show.innerHTML+=emp1.setdpt="eng" + "<br>";
+            show.innerHTML+=emp1.setslr="199900" + "<br>";
+            show.innerHTML+="<hr>"
+
+            const emp2=new Employee("shahhid","CS","200k");
+            // emp1.set("zeeshan","SE","100k");
+            emp2.getdetails;
+            show.innerHTML+="object 2 <br>"
+            show.innerHTML+=emp2.setname="sha" + "<br>";
+            show.innerHTML+=emp2.setdpt="eng" + "<br>";
+            show.innerHTML+=emp2.setslr="1900" + "<br>";
+
+
+        </script>
+    </body>
+</html>
