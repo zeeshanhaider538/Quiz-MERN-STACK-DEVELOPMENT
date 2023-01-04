@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Display Reading Status</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+            <div style="" id="show" >
+                <!-- <label>Author:</label>
+                <span id="auther"></span><br><br>
+                <label>Tittle:</label>
+                <span id="tit"></span><br><br>
+                <label>Reading Status:</label>
+                <span id="rs"></span><br><br> -->
+
+            </div>
+        
+        <script>
+            var show= document.getElementById("show");
+            // var auther=document.getElementById("auther");
+            // var tit=document.getElementById("tit");
+            //  var rs=document.getElementById("rs");
+            var library = [
+                {
+                author: 'Bill Gates',
+                title: 'The Road Ahead',
+                readingStatus: true
+                },
+                {
+                author: 'Steve Jobs',
+                title: 'Walter Isaacson',
+                readingStatus: true
+                },
+                {
+                author: 'Suzanne Collins',
+                title: 'Mockingjay: The Final Book of The Hunger Games',
+                readingStatus: false
+                }
+            ];
+            console.log(library[0].author)
+            for(let i=0;i<library.length;i++)
+            {
+                if(library[i].readingStatus==true)
+                {
+                    show.innerHTML+=`<li> Author : ${library[i].author}</li><br>`;
+                    show.innerHTML+=`<li>  Tittle : ${library[i].title} </li> <br>`;
+                    show.innerHTML+=`<li>  Reading Status : ${library[i].readingStatus}</li>  <br>`;
+                    show.innerHTML+="<hr/>"
+                    
+                }
+            }
+
+        
+        </script>
+    </body>
+</html>
